@@ -15,6 +15,7 @@ Prefer current repo files over memory. If the user asks about the public/latest 
    - Install/run/deploy: read `references/install-run.md`.
    - `config.textproto`, migrations, Record API setup, ACLs: read `references/config-and-migrations.md`.
    - Direct HTTP/Auth/Record API calls: read `references/http-api.md`.
+   - OAuth, OIDC, PKCE, or "TrailBase as SSO" questions: read `references/oauth-sso.md`.
    - SDK integration: read `references/sdk.md`, then inspect the language-specific client source if precision matters.
    - WASM custom endpoints: read `references/custom-wasm-apis.md`.
    - Repo navigation or implementation changes: read `references/source-map.md`.
@@ -30,6 +31,7 @@ Prefer current repo files over memory. If the user asks about the public/latest 
 - Main public Record API path is `/api/records/v1/<api-name>`.
 - Main auth path is `/api/auth/v1`.
 - Auth tokens are sent with `Authorization: Bearer <auth_token>`; refresh and CSRF tokens may also be represented as `Refresh-Token` and `CSRF-Token` headers by SDKs.
+- TrailBase can broker sign-in through configured external OAuth/OIDC providers and supports an auth-code + PKCE handoff to native or different-origin apps. Do not describe it as a full OAuth/OIDC identity provider unless the current source has added standard IdP endpoints such as authorization, discovery, JWKS, and userinfo.
 - Realtime subscriptions are exposed under `/api/records/v1/<api-name>/subscribe/<id-or-*>`.
 
 ## Validation

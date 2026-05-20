@@ -60,4 +60,5 @@ Use `rg` first:
 rg -n "record_apis|acl_authenticated|access_rule|api/records/v1|api/auth/v1" crates docs client examples
 rg -n "subscribe|Refresh-Token|CSRF-Token|auth_token|refresh_token" client crates/assets/js/client
 rg -n "config.proto|RecordApi|LoginRequest|RefreshRequest" crates client
+rg -n "oauth/providers|response_type|pkce_code_challenge|redirect_uri_allowlist|well-known|jwks|userinfo|OIDC0|oauth_providers" crates docs client examples
 ```

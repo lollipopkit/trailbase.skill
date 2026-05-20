@@ -57,14 +57,18 @@ Other important auth endpoints implemented by SDKs include:
 - `POST /api/auth/v1/refresh`
 - `POST /api/auth/v1/logout`
 - `GET /api/auth/v1/status`
+- `POST /api/auth/v1/token`
 - `POST /api/auth/v1/login_mfa`
 - `POST /api/auth/v1/otp/request`
 - `POST /api/auth/v1/otp/login`
 - `POST /api/auth/v1/change_email`
 - `GET /api/auth/v1/avatar/<user-id>`
+- `GET /api/auth/v1/oauth/providers`
 - OAuth login/callback under `/api/auth/v1/oauth/<provider>/...`
 
 For native/different-origin auth UI flows, TrailBase supports auth-code flow with PKCE: pass `response_type=code`, `pkce_code_challenge=<url-safe-base64-sha256-verifier>`, and `redirect_uri=<target>` to login/OAuth login, then exchange the auth code at `/api/auth/v1/token`.
+
+For OAuth/OIDC SSO boundaries, see `references/oauth-sso.md`. In current source, TrailBase acts as an app auth service and external OAuth/OIDC login broker; do not assume standard OIDC provider endpoints are present.
 
 ## Record CRUD
 
